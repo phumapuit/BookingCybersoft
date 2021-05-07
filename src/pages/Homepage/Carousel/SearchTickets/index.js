@@ -229,7 +229,7 @@ export default function ControlledOpenSelect() {
               {dataSelected.ngayChieuRender.map(ngayChieu => (
 
                 <MenuItem value={ngayChieu}>
-                  {formatDate(ngayChieu)}
+                  {formatDate(ngayChieu).dateFull}
                 </MenuItem>
               ))}
             </Select>

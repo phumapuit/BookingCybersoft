@@ -2,7 +2,7 @@ import axiosClient from "./axiosClient";
 const moviesApi = {
 
   getDanhSachPhim: () => {
-    const path = "/QuanLyPhim/LayDanhSachPhim?maNhom=GP09";
+    const path = "/QuanLyPhim/LayDanhSachPhim?maNhom=GP03";
     return axiosClient.get(path);
   },
 

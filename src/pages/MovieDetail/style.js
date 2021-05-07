@@ -44,7 +44,7 @@ const useStyle = makeStyles((theme) => ({
         width: '260px',
         height: '350px',
         border: '2px solid white',
-        marginRight: '25px',
+        // marginRight: '25px',
         borderRadius: '10px',
         '& img': {
             borderRadius: '10px',
@@ -59,6 +59,7 @@ const useStyle = makeStyles((theme) => ({
     leftName: {
         color: '#e9e9e9',
         fontWeight: 'bold',
+        paddingLeft: '20px',
         '& p:first-child': {
             fontSize: '16px'
         },
@@ -193,6 +194,9 @@ const useStyle = makeStyles((theme) => ({
             lineHeight: 1.7,
             fontSize: '12px',
             color: '#9b9b9b',
+        },
+        '@media (max-width:425px)': {
+            height: '450px'
         }
     },
     theaterMovieDetailTime: {
@@ -217,7 +221,7 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: 'white',
         width: '70%',
         margin: '0 auto',
-        minWidth: '500px',
+        minWidth: '300px',
         padding: '20px 0',
         borderRadius: '15px',
         '& div': {
@@ -232,8 +236,5 @@ const useStyle = makeStyles((theme) => ({
         }
 
     }
-
-
-
 }))
 export default useStyle

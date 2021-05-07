@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // , useState 
 import { register } from '../../reducers/actions/User';
 import { Redirect } from "react-router-dom";
@@ -7,9 +7,14 @@ import useStyle from "./style";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { signupUserSchema } from "../../reducers/services";
+import { Dialog, DialogActions, DialogTitle, DialogContentText, Button } from "@material-ui/core";
+import { RESET_ERROR } from "../../reducers/constants/User";
 export default function Register() {
   const classes = useStyle()
-
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => {
+    setOpen(!open)
+  }
   const { loading, error } = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
 
@@ -18,6 +23,11 @@ export default function Register() {
   useEffect(() => {
     document.title = 'Đăng ký'
   }, [])
+  useEffect(() => {
+    if (error !== null)
+      setOpen(true)
+  }, [error])
+
   if (loading) {
     return <div>loading</div>
   }
@@ -29,7 +39,7 @@ export default function Register() {
 
     <div className={classes.loginWrap}>
       <div className={classes.loginHtml}>
-        <h3 className={classes.signIn}>Đăng Ký</h3>
+        <h3 className={classes.signUp}>Đăng Ký</h3>
         <div className={classes.loginForm}>
           <div className={classes.signInHtml}>
             <Formik
@@ -112,7 +122,7 @@ export default function Register() {
                   </div>
                   <div className={classes.devide} />
                   <div className={classes.footLnk}>
-                    <Link to="/dangnhap">Đã có tài khoản? Đăng nhập</Link>
+                    <Link to="/dangnhap" onClick={() => dispatch({ type: RESET_ERROR })}>Đã có tài khoản? Đăng nhập</Link>
                   </div>
                 </Form>
               )}
@@ -120,6 +130,18 @@ export default function Register() {
           </div>
         </div>
       </div>
+      <Dialog open={open}>
+        <DialogTitle id="alert-dialog-title">{"Thông báo"}</DialogTitle>
+        <DialogContentText id="alert-dialog-description">
+          <div style={{ padding: '0 20px' }}>{error}</div>
+        </DialogContentText>
+
+        <DialogActions>
+          <Button color="primary">
+            <Button onClick={handleOpen}>Tôi đã hiểu</Button>
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
 
   )

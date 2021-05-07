@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import useStyle from "./style";
@@ -7,8 +7,14 @@ import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { signinUserSchema } from "../../reducers/services";
 import LoadingPage from '../../components/LoadingPage';
+import { Dialog, DialogActions, DialogTitle, Button, DialogContentText } from "@material-ui/core";
+import { RESET_ERROR } from "../../reducers/constants/User";
 function Login() {
   const classes = useStyle()
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => {
+    setOpen(!open)
+  }
   const { loading, error } = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
 
@@ -17,6 +23,10 @@ function Login() {
   useEffect(() => {
     document.title = 'Đăng nhập'
   }, [])
+  useEffect(() => {
+    if (error !== null)
+      setOpen(true)
+  }, [error])
 
   if (loading) {
     return <LoadingPage />
@@ -24,7 +34,6 @@ function Login() {
   if (currentUser) {
     return <Redirect to='/' />
   }
-
 
   return (
     <div className={classes.loginWrap}>
@@ -72,7 +81,7 @@ function Login() {
                     </div>
                     <div className={classes.devide} />
                     <div className={classes.footLnk}>
-                      <Link to='/dangky' >Chưa có tài khoản? Đăng ký ngay</Link>
+                      <Link to='/dangky' onClick={() => dispatch({ type: RESET_ERROR })} >Chưa có tài khoản? Đăng ký ngay</Link>
                     </div>
                   </Form>
                 )}
@@ -82,6 +91,19 @@ function Login() {
           </div>
         </div>
       </div>
+
+      <Dialog open={open}>
+        <DialogTitle id="alert-dialog-title">{"Thông báo"}</DialogTitle>
+        <DialogContentText id="alert-dialog-description">
+          <div style={{ padding: '0 20px' }}>{error}</div>
+        </DialogContentText>
+
+        <DialogActions>
+          <Button color="primary">
+            <Button onClick={handleOpen}>Tôi đã hiểu</Button>
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   )
 }
