@@ -223,14 +223,14 @@ export default function MovieDetail() {
 
           <Grid className={classes.up__content} container justify='space-between' alignItems='center'>
 
-            <Grid className={classes.content__left} container item xs={8}>
+            <Grid className={classes.content__left} container item xs={10}>
               <Hidden smDown>
-                <Grid item className={classes.leftImg} >
+                <Grid item className={classes.leftImg} sm={4} >
                   <img src={movieDetail?.hinhAnh} alt="movieDetail" />
                 </Grid>
               </Hidden>
 
-              <Grid className={classes.leftName} item >
+              <Grid className={classes.leftName} item xs={12} sm={8} >
                 <p>{movieDetail?.ngayKhoiChieu.split('T', 1)}</p>
                 <div><span>C13</span><p>{movieDetail?.tenPhim}</p></div>
                 <button className={classes.leftName__button} onClick={() => document.getElementById('movieInfo').scrollIntoView({ block: 'center', inline: 'center' })}>Mua vé</button>
@@ -238,7 +238,7 @@ export default function MovieDetail() {
 
             </Grid>
 
-            <Grid className={classes.content__right} item xs={4}>
+            <Grid className={classes.content__right} item xs={2}>
               <Hidden smDown>
                 <h1 className={classes.movieRating__point}>
                   {movieDetail?.danhGia}

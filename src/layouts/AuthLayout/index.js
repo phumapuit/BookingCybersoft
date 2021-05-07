@@ -8,8 +8,8 @@ export default function AuthLayout(props) {
     backgroundPosition: 'center',
   }
   const bgColor = {
-    minWidth: 600,
-    minHeight: 625
+    height: '1000px',
+    minHeight: '100vh',
   }
 
   return (

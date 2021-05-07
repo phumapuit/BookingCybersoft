@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAIL } from './constants/User';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAIL, RESET_ERROR } from './constants/User';
 
 const currentUser = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null
 const initialState = {
@@ -51,9 +51,14 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         currentUser: null,
-        error: null,
+        errorLogin: null,
+        errorRegister: null,
         loading: null,
       };
+    }
+
+    case RESET_ERROR: {
+      return { ...state, error: null }
     }
 
     default:
