@@ -5,7 +5,11 @@ const useStyle = makeStyles(news => ({
         maxWidth: '1000px',
         width: '100%',
         margin: '0 auto',
-        padding: '70px 0'
+        padding: '70px 0',
+        // chua responsive
+        '@media (max-width:768px)':{
+            display:'none'
+        }
     },
 
     fullImg: {

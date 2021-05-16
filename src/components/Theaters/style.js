@@ -56,6 +56,7 @@ const useStyle = makeStyles({
             fontSize: '11px',
             overflow: 'hidden',
             whiteSpace: 'nowrap',
+            textOverflow:'ellipsis',
             fontWeight: '300'
         }
 
@@ -78,5 +79,10 @@ const useStyle = makeStyles({
 
         }
     },
+    maxWidthMobile:{
+        '@media (max-width:425px)':{
+            maxWidth:'100%',
+        }
+    }
 })
 export default useStyle

@@ -115,7 +115,7 @@ export default function Theaters() {
                                 {theaterList?.map((item, index) => {
                                     return (
                                         // SỬA LẠI ĐỂ RENDER RA LOGO
-                                        <Tab label={
+                                        <Tab className={classes.maxWidthMobile} label={
                                             <img style={{ width: '50px', height: '50px' }}
                                                 src={item.logo} />
                                         }
@@ -146,7 +146,7 @@ export default function Theaters() {
 
                                                     {item.lstCumRap?.map((item1, index1) => {
                                                         return (
-                                                            <Tab label={
+                                                            <Tab className={classes.maxWidthMobile} label={
 
                                                                 <Grid container justify="space-between" >
 

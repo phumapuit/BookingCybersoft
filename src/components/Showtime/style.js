@@ -7,6 +7,15 @@ const useStyle = makeStyles({
         width: '100%',
         maxWidth: '1000px',
         minWidth: '750px',
+        '@media (max-width:768px)':{
+            paddingTop:'25px'
+        },
+        '@media (max-width: 425px)':{
+            minWidth: 400
+        },
+        '@media (max-width: 325px)':{
+            minWidth: 300
+        }
 
     },
     Arrow: {

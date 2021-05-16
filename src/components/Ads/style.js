@@ -9,7 +9,7 @@ const useStyle = makeStyles(theme => ({
         color: 'white',
         height: 650,
         '@media (max-width:991px)': {
-            height: 1150
+            height: '100%'
         }
     },
     mainMaxWidth: {
@@ -28,6 +28,9 @@ const useStyle = makeStyles(theme => ({
         margin: '0 auto',
         '@media (max-width:991px)': {
             width: '38%'
+        },
+        '@media (max-width:425px)':{
+            width:'50%'
         }
     },
 
@@ -50,6 +53,9 @@ const useStyle = makeStyles(theme => ({
 
     'slick-mobile': {
         minWidth: '236px',
+        '@media (max-width:425px)':{
+            minWidth:'100%'
+        },
         maxWidth: '350px',
         margin: '0 auto',
         '& img': {

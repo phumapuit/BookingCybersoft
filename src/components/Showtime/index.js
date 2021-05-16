@@ -78,6 +78,34 @@ export default function Showtime(props) {
         arrows: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  
+                }
+              },
+            {
+              breakpoint: 425,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                rows: 1
+              }
+            },
+            
+            {
+                breakpoint: 325,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  rows: 1
+                }
+              },
+
+          ]
     };
 
     const handleTrailer = (movieTrailer) => {

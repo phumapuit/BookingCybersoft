@@ -22,6 +22,21 @@ export default function CarouselBanner(props) {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     dotsClass: "slickdotsbanner", // đổi tên class để dùng css chỉnh sửa riêng cho dot trong trường hợp dùng 2 Slider
+    responsive: [
+      {
+          breakpoint: 768,
+          settings: {
+            dots:false,
+          }
+        },
+      {
+        breakpoint: 425,
+        settings: {
+          arrows:false,
+          dots:false,
+        }
+      },
+    ]
   };
 
   function NextArrow(props) {
