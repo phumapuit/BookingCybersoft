@@ -41,7 +41,6 @@ export default function Header() {
 
     // lấy data từ redux-store về
     const { currentUser } = useSelector((state) => state.authReducer);
-
     // đăng xuất
     const dispatch = useDispatch();
     const handleDelete = () => {
@@ -84,7 +83,7 @@ export default function Header() {
 
                     {/* logo */}
                     <div>
-                        <img src="https://tix.vn/app/assets/img/icons/web-logo.png" alt="logo" style={{ height: 50 }} onClick={() => history.push(`/`)} />
+                        <img src="/img/logo.png" alt="logo" style={{ height: 50 }} onClick={() => history.push(`/`)} />
                     </div>
 
                     {/* 4 nội dung chính */}
@@ -103,7 +102,7 @@ export default function Header() {
                             <List >
 
                                 <LinkR to="/profile">
-                                    <Chip variant="outlined" color="primary" label={currentUser.taiKhoan} icon={<FaceIcon />} />
+                                    <Chip variant="outlined" color="primary" label={currentUser.hoTen} icon={<FaceIcon />} />
                                 </LinkR>
 
                                 <Link>

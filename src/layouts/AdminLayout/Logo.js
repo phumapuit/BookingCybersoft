@@ -3,9 +3,9 @@ import React from 'react';
 const Logo = (props) => {
   return (
     <img
-      style={{ width: '50px', height: '50px' }}
+      style={{ width: '80px'}}
       alt="Logo"
-      src="https://tix.vn/app/assets/img/icons/web-logo.png"
+      src="/img/logo-neko.png"
       {...props}
     />
   );

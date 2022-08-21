@@ -69,7 +69,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       {/* đây là phần logo avatar user và tên user */}
       <Box alignItems="center" display="flex" flexDirection="column" p={2}>
         <Avatar className={classes.avatar} component={RouterLink} src={user.avatar} />
-        <Typography className={classes.name} color="textPrimary" variant="h5">
+        <Typography className={`${classes.name} text-center`} color="textPrimary" variant="h5">
           {user.name}
         </Typography>
         <Typography color="textSecondary" variant="body2">

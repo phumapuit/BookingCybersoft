@@ -14,7 +14,7 @@ const usersApi = {
   },
 
   getDanhSachNguoiDung: () => {
-    const path = "/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP03";
+    const path = "/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP09";
     return axiosClient.get(path);
   },
 

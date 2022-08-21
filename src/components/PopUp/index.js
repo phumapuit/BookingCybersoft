@@ -22,7 +22,7 @@ export default function PopUp(props) {
             open={open}
             maxWidth='md'
         >
-            <iframe title="Trailer Movie" className={`${sm && classes.downRangeSm} ${md && classes.upKeyMd}`} src={trailer.indexOf('https') > -1 ? trailer : "https://www.youtube.com/embed/fB8TyLTD7EE"} frameBorder="0" allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
+            <iframe title="Trailer Movie" className={`${sm && classes.downRangeSm} ${md && classes.upKeyMd}`} src={trailer.indexOf('https://www.youtube.com/') > -1 ? trailer.replace("watch?v=","embed/") : "https://www.youtube.com/embed/fB8TyLTD7EE"} frameBorder="0" allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'></iframe>
             {/* <IconButton className={classes.closeButton} onClick={() => handleButton()} >
                 <CloseIcon style={{ color: 'white' }} fontSize='small' />
             </IconButton> */}

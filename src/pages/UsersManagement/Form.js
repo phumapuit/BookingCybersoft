@@ -254,6 +254,7 @@ export default function FormUser(props) {
                                         <option value="GP01">GP01</option>
                                         <option value="GP02">GP02</option>
                                         <option value="GP03">GP03</option>
+                                        <option value="GP09">GP09</option>
                                     </Field>
                                     <ErrorMessage name="maNhom">
                                         {(maNhom) => {
